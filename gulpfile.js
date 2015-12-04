@@ -22,6 +22,7 @@ gulp.task('build', ['clean', 'bower'], function(){
   return gulp.src(['source/*.js', 'source/**/*.js'])
     .pipe(concat('bundle.js'))
     .pipe(addsrc('source/**/*.html'))
+    .pipe(addsrc('source/**/*.css'))
     .pipe(gulp.dest(paths.filepath))
     .on('error', gutil.log)
     console.log('IM WATCHING YOU')
